@@ -1,9 +1,18 @@
 /*
  * Create a list that holds all of your cards
  */
-const allCards = document.querySelectorAll('i.fa');
+// const allCards = document.querySelector('li.card');
 
+// allCards.setAttribute('style', 'color: blue; background-color: orange; font-size: 3.5em;');
 
+/*
+ * Display the cards on the page
+ *   - shuffle the list of cards using the provided "shuffle" method below
+ *   - loop through each card and create its HTML
+ *   - add each card's HTML to the page
+ */
+
+// Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -19,7 +28,6 @@ function shuffle(array) {
  
 }
 let newCards = shuffle(allCards);
-
 // allCards.parentNode.replaceChild(newCards,allCards);
 
 
