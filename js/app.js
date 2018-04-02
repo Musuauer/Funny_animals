@@ -4,9 +4,7 @@
 
 
 const allCards = document.querySelectorAll('.card');
-const oldCards = [...allCards];
-
-
+const oldCards = [...allCards].map(i => i.outerHTML);
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -32,7 +30,11 @@ function shuffle(array) {
 }
 let newCards = shuffle(oldCards);
 
-allCards.parentNode.replaceChild(newCards,allCards);  
+let deck = document.getElementById('deck');
+deck.innerHTML = newCards.join('');
+
+
+
 
 
 
