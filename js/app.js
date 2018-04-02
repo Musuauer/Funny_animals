@@ -33,6 +33,17 @@ let newCards = shuffle(oldCards);
 let deck = document.querySelector('.deck');
 deck.innerHTML = newCards.join('');
 
+function openCard(){
+ 
+    this.setAttribute('class', 'open');
+    this.className += ' show';
+}
+
+const cards = [...allCards];
+for (card of cards){
+    this.addEventListener('click', openCard);
+}
+
 
 
 
