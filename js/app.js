@@ -30,7 +30,7 @@ function shuffle(array) {
 }
 let newCards = shuffle(oldCards);
 
-let deck = document.getElementById('deck');
+let deck = document.getElementsByClassName('deck');
 deck.innerHTML = newCards.join('');
 
 
