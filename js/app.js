@@ -1,9 +1,11 @@
 /*
  * Create a list that holds all of your cards
  */
-// const allCards = document.querySelector('li.card');
 
-// allCards.setAttribute('style', 'color: blue; background-color: orange; font-size: 3.5em;');
+
+const allCards = document.querySelectorAll('.card');
+const oldCards = [...allCards];
+
 
 /*
  * Display the cards on the page
@@ -13,6 +15,7 @@
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
+
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -27,8 +30,9 @@ function shuffle(array) {
     return array;
  
 }
-let newCards = shuffle(allCards);
-// allCards.parentNode.replaceChild(newCards,allCards);
+let newCards = shuffle(oldCards);
+
+allCards.parentNode.replaceChild(newCards,allCards);  
 
 
 
