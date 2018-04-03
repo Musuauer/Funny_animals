@@ -33,41 +33,51 @@ let newCards = shuffle(oldCards);
 let deck = document.querySelector('.deck');
 deck.innerHTML = newCards.join('');
 
-
 const cards = deck.children;
 
 let openCards = [];
+let matchedCards = [];
 
 function lockCards(){
     openCards[0].classList.add('match');
+    matchedCards.push(openCards[0]);
     openCards[0].classList.remove('open','show');
+    
     openCards[1].classList.add('match');
+    matchedCards.push(openCards[1]);
     openCards[1].classList.remove('open','show');
+
     openCards = [];
 }
 
 function removeAndHide(){
+    
     openCards[0].classList.remove('open','show');
     openCards[1].classList.remove('open','show');
+    
     openCards = [];
 
 }
 
 function flipped (justFlipped){
     if (openCards.length < 2) openCards.push(justFlipped);
+    
     if (openCards.length === 2){
         if (openCards[0].innerHTML === openCards[1].innerHTML){
             lockCards();
         }
         else {
-            setTimeout(removeAndHide,1000);
+            setTimeout(removeAndHide,900);
             
         }
     }
+    if (openCards.length >= 2) return;
 }
 
 function flip(){
+    if (openCards.length >= 2) return;
     this.classList.add('open','show');
+    
     flipped(this);
 }
 
