@@ -33,15 +33,42 @@ let newCards = shuffle(oldCards);
 let deck = document.querySelector('.deck');
 deck.innerHTML = newCards.join('');
 
-function openCard(){
- 
-    this.setAttribute('class', 'open');
-    this.className += ' show';
+
+const cards = deck.children;
+
+let openCards = [];
+
+function lockCards(){
+    openCards[0].classList.add('match');
+    openCards[0].classList.remove('open','show');
+    openCards[1].classList.add('match');
+    openCards[1].classList.remove('open','show');
+    openCards = [];
 }
 
-const cards = [...allCards];
+function removeAndHide(){
+
+}
+
+function flipped (justFlipped){
+    if (openCards.length < 2) openCards.push(justFlipped);
+    if (openCards.length === 2){
+        if (openCards[0].innerHTML === openCards[1].innerHTML){
+            lockCards();
+        }
+        else {
+            removeAndHide();
+        }
+    }
+}
+
+function flip(){
+    this.classList.add('open','show');
+    flipped(this);
+}
+
 for (card of cards){
-    this.addEventListener('click', openCard);
+    card.addEventListener('click', flip);
 }
 
 
