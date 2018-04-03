@@ -47,6 +47,9 @@ function lockCards(){
 }
 
 function removeAndHide(){
+    openCards[0].classList.remove('open','show');
+    openCards[1].classList.remove('open','show');
+    openCards = [];
 
 }
 
@@ -57,7 +60,8 @@ function flipped (justFlipped){
             lockCards();
         }
         else {
-            removeAndHide();
+            setTimeout(removeAndHide,1000);
+            
         }
     }
 }
