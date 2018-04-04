@@ -51,7 +51,6 @@ function lockCards(){
 }
 
 function removeAndHide(){
-    
     openCards[0].classList.remove('open','show');
     openCards[1].classList.remove('open','show');
     
@@ -76,7 +75,6 @@ function flipped (justFlipped){
 }
 
 function flip(){
-    
     if (openCards.length >= 2) return;
     this.classList.add('open','show');
     
@@ -88,12 +86,32 @@ for (card of cards){
     addMove();
     
 }
+const congrats = document.querySelector('.popup');
+const closeButton = document.querySelector('.close-button');
+const starsPopup = document.getElementById('stars-result');
+const movesPopup = document.getElementById('moves-result');
+
+function toggleModal() {
+        movesPopup.innerHTML = count + ' Moves';
+        if (stars.children.length === 1) {
+            starsPopup.innerHTML = stars.children.length + ' Star';
+        }
+        else {
+            starsPopup.innerHTML = stars.children.length + ' Stars';
+        }
+        congrats.classList.toggle('show-popup');
+    }
+
+closeButton.addEventListener('click', restartGame);
 
 function won(){
-    if (matchedCards.length === 16) alert('You won!');
+    if (matchedCards.length === 4) toggleModal();
+    
     
 }
-const stars = document.querySelector('.stars');
+let stars = document.querySelector('.stars');
+
+
 
 function addMove(){
     const counter = document.querySelector(".moves");
@@ -105,14 +123,15 @@ function addMove(){
         else if (count >=2) {
             counter.innerHTML = count + ' Moves';
         }
-        if (count >= 25 &&count <35) {
+        if (count >= 30 &&count <40) {
             stars.children[2].remove();
         }
-        if (count >= 35 &&count <45) {
+        else if (count >= 45 &&count <60) {
             stars.children[1].remove();
         }
-        if (count >= 45 &&count <60) {
-            stars.lchildren[0].remove();
+        else  if(count >= 60) {
+            stars.children[0].remove();
+            stars.children = [];
         }
 
     };
@@ -124,6 +143,8 @@ restartButton.addEventListener('click', restartGame);
 function restartGame(){
     location.reload();
 }
+
+
 
 
 
