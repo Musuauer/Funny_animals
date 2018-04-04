@@ -69,27 +69,61 @@ function flipped (justFlipped){
         else {
             setTimeout(removeAndHide,900);
         }
+        
     }
     if (openCards.length >= 2) return;
     won();
 }
 
 function flip(){
+    
     if (openCards.length >= 2) return;
     this.classList.add('open','show');
-
+    
     flipped(this);
 }
 
 for (card of cards){
     card.addEventListener('click', flip);
+    addMove();
+    
 }
 
 function won(){
     if (matchedCards.length === 16) alert('You won!');
     
 }
+const stars = document.querySelector('.stars');
 
+function addMove(){
+    const counter = document.querySelector(".moves");
+    count = 0;
+    card.onclick = function() {
+      count += 1;
+      if (count === 1) {counter.innerHTML = count + ' Move';
+        }
+        else if (count >=2) {
+            counter.innerHTML = count + ' Moves';
+        }
+        if (count >= 25 &&count <35) {
+            stars.children[2].remove();
+        }
+        if (count >= 35 &&count <45) {
+            stars.children[1].remove();
+        }
+        if (count >= 45 &&count <60) {
+            stars.lchildren[0].remove();
+        }
+
+    };
+}
+
+const restartButton = document.querySelector('.restart');
+restartButton.addEventListener('click', restartGame);
+
+function restartGame(){
+    location.reload();
+}
 
 
 
