@@ -68,16 +68,16 @@ function flipped (justFlipped){
         }
         else {
             setTimeout(removeAndHide,900);
-            
         }
     }
     if (openCards.length >= 2) return;
+    won();
 }
 
 function flip(){
     if (openCards.length >= 2) return;
     this.classList.add('open','show');
-    
+
     flipped(this);
 }
 
@@ -85,7 +85,10 @@ for (card of cards){
     card.addEventListener('click', flip);
 }
 
-
+function won(){
+    if (matchedCards.length === 16) alert('You won!');
+    
+}
 
 
 
