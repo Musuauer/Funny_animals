@@ -1,96 +1,128 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <title>Matching Game</title>
+    <title>Funny Animals</title>
     <meta name="description" content="">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="css/app.css">
 </head>
+
 <body>
 
     <div class="container">
         <header>
-            <h1>Matching Game</h1>
+            <h1>Funny Animals</h1>
         </header>
 
         <section class="score-panel">
-        	<ul class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        	</ul>
 
-        	<span class="moves"></span>
+            <span class="timer">    
+                    <span id="minutes">00</span>:<span id="seconds">00</span>
+        </span>
+
+            <ul class="stars">
+                <li>
+                    <i class="fa fa-star"></i>
+                </li>
+                <li>
+                    <i class="fa fa-star"></i>
+                </li>
+                <li>
+                    <i class="fa fa-star"></i>
+                </li>
+            </ul>
+
+            <span class="moves"></span>
 
             <div class="restart">
-        		<i class="fa fa-repeat"></i>
-        	</div>
+                <i class="fa fa-repeat"></i>
+            </div>
         </section>
 
         <ul class="deck">
             <li class="card">
-                <i class="fa fa-diamond"></i>
+                <img class="images" src="img/bear.jpg" alt="bear">
             </li>
             <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
+                <img class="images" src="img/cat.jpg" alt="cat">
             </li>
             <li class="card">
-                <i class="fa fa-anchor"></i>
+                <img class="images" src="img/dog.jpg" alt="dog">
             </li>
             <li class="card">
-                <i class="fa fa-bolt"></i>
+                <img class="images" src="img/alpaca.jpg" alt="alpaca">
             </li>
             <li class="card">
-                <i class="fa fa-cube"></i>
+                <img class="images" src="img/fox.jpeg" alt="fox">
             </li>
             <li class="card">
-                <i class="fa fa-anchor"></i>
+                <img class="images" src="img/horse.jpeg" alt="horse">
             </li>
             <li class="card">
-                <i class="fa fa-leaf"></i>
+                <img class="images" src="img/lemur.jpg" alt="lemur">
             </li>
             <li class="card">
-                <i class="fa fa-bicycle"></i>
+                <img class="images" src="img/monkey.jpg" alt="monkey">
             </li>
             <li class="card">
-                <i class="fa fa-diamond"></i>
+                <img class="images" src="img/bear.jpg" alt="bear">
             </li>
             <li class="card">
-                <i class="fa fa-bomb"></i>
+                <img class="images" src="img/cat.jpg" alt="cat">
             </li>
             <li class="card">
-                <i class="fa fa-leaf"></i>
+                <img class="images" src="img/dog.jpg" alt="dog">
             </li>
             <li class="card">
-                <i class="fa fa-bomb"></i>
+                <img class="images" src="img/alpaca.jpg" alt="alpaca">
             </li>
             <li class="card">
-                <i class="fa fa-bolt"></i>
+                <img class="images" src="img/fox.jpeg" alt="fox">
             </li>
             <li class="card">
-                <i class="fa fa-bicycle"></i>
+                <img class="images" src="img/horse.jpeg" alt="horse">
             </li>
             <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
+                <img class="images" src="img/lemur.jpg" alt="lemur">
             </li>
             <li class="card">
-                <i class="fa fa-cube"></i>
+                <img class="images" src="img/monkey.jpg" alt="monkey">
             </li>
         </ul>
         <div class="popup">
             <div class="popup-content">
-                <div class="close-button"><i class="fa fa-repeat"></i>
+                <div class="close-button">
+                    <i class="fa fa-repeat"></i>
                 </div>
-                
-                <h1>Congrats!</h1>
-                <h2>You finished after <span id="moves-result"></span> moves.</h2>
-                <h2>You won <span id="stars-result"></span>.</h2>
+
+                <h1>You did it!</h1>
+                <h2>Moves:
+                    <span id="moves-result"></span></h2>
+                    <h2>Time:
+                        <span id="minutes-result"></span>
+                        <span id="seconds-result"></span> seconds.</h2>
+                <h2>You won
+                    <span id="stars-result"></span>.</h2>
             </div>
         </div>
     </div>
 
     <script src="js/app.js"></script>
+
+    <!-- bear: https://www.flickr.com/photos/tambako/15113616172
+    cat: https://www.flickr.com/photos/54125007@N08/15634745431
+    dog: https://www.flickr.com/photos/johnbullas/3753969359
+    fox: http://maxpixel.freegreatpicture.com/Fuchs-Tongue-Animal-World-Wild-Animal-Funny-2183647
+    aplaca: https://www.pinterest.com/pin/201043570837167897/
+    lemur: https://careflightcollective.com/page/6/
+    horse: https://www.pexels.com/photo/close-up-portrait-of-dog-yawning-247939/
+    monkey: https://pixabay.com/id/monyet-lucu-menyenangkan-kesenangan-2753916/
+
+    deck pattern: https://pixabay.com/en/colorful-prismatic-rainbow-animal-1353143/ -->
+
 </body>
+
 </html>

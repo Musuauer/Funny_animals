@@ -19,6 +19,8 @@ closeButton.addEventListener('click', restartGame);
 
 const starsPopup = document.getElementById('stars-result');
 const movesPopup = document.getElementById('moves-result');
+const minutesPopup = document.getElementById('minutes-result');
+const secondsPopup = document.getElementById('seconds-result');
 
 const stars = document.querySelector('.stars').children;
 let starArray = [...stars];
@@ -27,7 +29,14 @@ const restartButton = document.querySelector('.restart');
 restartButton.addEventListener('click', restartGame);
 
 let moves = 0;
-const counter = document.querySelector(".moves");
+const counter = document.querySelector('.moves');
+
+let sec = 0;
+let seconds = document.getElementById('seconds');
+let minutes = document.getElementById('minutes');
+
+let timer = 0;
+
 
 
 
@@ -52,7 +61,18 @@ function shuffle(array) {
 
 }
 function toggleModal(moves, starArray) {
-    movesPopup.innerHTML = moves + ' Moves';
+    movesPopup.innerHTML = moves;
+
+    if (minutes.innerHTML != 00 && minutes.innerHTML === 1){
+        minutesPopup.innerHTML = minutes.innerHTML + ' minute and ';
+    }
+    else if (minutes.innerHTML != 00 && minutes.innerHTML > 1){
+            minutesPopup.innerHTML = minutes.innerHTML + ' minutes and ';
+        }
+    
+    
+    secondsPopup.innerHTML = seconds.innerHTML;
+
     if (starArray.length === 1) {
         starsPopup.innerHTML = starArray.length + ' Star';
     } else {
@@ -61,18 +81,24 @@ function toggleModal(moves, starArray) {
     congrats.classList.toggle('show-popup');
 }
 function won(matchedCards) {
-    if (matchedCards.length === 4) toggleModal(moves,starArray);
+    if (matchedCards.length === 4) {
+        clearInterval(timer);
+        toggleModal(moves,starArray);
+}
 }
 
 function addMatchClass(card1, card2){
+    card1.children[0].classList.add('paired');
+    card2.children[0].classList.add('paired');
     card1.classList.add('match');
     card2.classList.add('match');
+    
 
 }
 
 function removeAndHide(card1, card2){
-    card1.classList.remove('open', 'show');
-    card2.classList.remove('open', 'show');
+    card1.classList.remove('open');
+    card2.classList.remove('open');
     openCards = [];
 }
 
@@ -82,6 +108,20 @@ function addToMatched(matchedCards, card1,card2) {
     addMatchClass(card1, card2);
 
     won(matchedCards);
+}
+
+ // Timer function adapted from https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript
+
+//  function stopTimer(timer) {
+//     clearInterval(timer);
+//   }
+
+function pad (val) { 
+    return val > 9 ? val : "0" + val; 
+}
+ function timerFunction(timer){
+    seconds.innerHTML = pad(++sec % 60);
+    minutes.innerHTML = pad(parseInt(sec / 60, 10));
 }
 
 function compareCards(openCards) {
@@ -99,11 +139,17 @@ function compareCards(openCards) {
         else {
             setTimeout(
                 () => removeAndHide(card1, card2),
-                900
+                1500
             );
         }
 
     }
+    if (moves === 0 && openCards.length === 1) {
+        timer = setInterval(
+            () => timerFunction(timer),
+            1000
+        );
+     }
 
 }
 
@@ -137,15 +183,20 @@ function increaseCounter(event){
         applyMovesToHTML(moves);
         updateStars(starArray, moves);
     }
+    
 
 }
 function flip(event) {
-	const card = event.target;
+    const card = event.target;
 
-    increaseCounter(event);   //not working
+   
+    increaseCounter(event); 
+
+    
+
     if (openCards.length >= 2) return;
 
-    card.classList.add('open', 'show');
+    card.classList.add('open');
     addToOpenCardsArray(openCards, card);
 
     compareCards(openCards);
@@ -153,8 +204,10 @@ function flip(event) {
 
 for (card of cards) {
     card.addEventListener('click', flip);
+
 }
 
 function restartGame() {
     location.reload();
 }
+
