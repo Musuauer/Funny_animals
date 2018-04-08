@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Gaegu');
-
-
 html {
     box-sizing: border-box;
 }
@@ -20,8 +18,9 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: rgb(253, 253, 253);
     font-family: 'Gaegu', cursive;
+    font-size: 1.5rem;
 }
 
 .container {
@@ -36,21 +35,20 @@ h1 {
     font-weight: 400;
     font-size: 3rem;
 }
+
 h2 {
     font-size: 1.5rem;
+}
 
-}
-.moves{
-    font-size: 2rem;
-}
-header{
+header {
     height: 100px;
     display: flex;
     justify-content: space-between;
 }
-.restart{
-    margin-top: .5rem;
+
+.restart {
     font-size: 1.5rem;
+    line-height: 2;
 }
 
 /*
@@ -60,17 +58,13 @@ header{
 .deck {
     width: 660px;
     min-height: 680px;
-    /* background: linear-gradient(160deg, #dde1ff 0%, #8b8df5 100%); */
     padding: 32px;
     border-radius: 10px;
-    /* box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5); */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin: -2rem 0 0 0;
-   
-
 }
 
 .deck .card {
@@ -86,12 +80,7 @@ header{
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
     border: 1px solid rgb(129, 129, 129);
-    
-
-    
-    
 }
-
 
 .deck .card.open {
     transform: rotateY(180deg);
@@ -103,9 +92,7 @@ header{
     cursor: default;
     pointer-events: none;
     backface-visibility: hidden;
-   
 }
-
 
 .deck .card.match {
     cursor: default;
@@ -115,7 +102,7 @@ header{
     z-index: 9;
 }
 
-.images{
+.images {
     width: 100%;
     height: 100%;
     border-radius: 8px;
@@ -125,13 +112,12 @@ header{
     transform: rotateY(180deg);
     border: 1px solid rgb(129, 129, 129);
 }
-.paired{
+
+.paired {
     transform: none;
     opacity: .7;
     backface-visibility: visible;
 }
-
-
 
 /*
  * Styles for the Score Panel
@@ -143,6 +129,10 @@ header{
     margin: 1rem 0;
     display: flex;
     justify-content: space-between;
+}
+
+.score-panel-element {
+    width: 120px;
 }
 
 .score-panel .stars {
@@ -164,45 +154,49 @@ header{
     cursor: pointer;
     margin-top: -.35rem;
 }
-.moves{
-    margin-top: -1rem;
-}
 
+.moves {
+    line-height: 1;
+}
 
 /* -- Styles for the pop-up -- */
+
 /* -- Adapted from https://sabe.io/tutorials/how-to-create-modal-popup-box -- */
 
-.popup{
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        visibility: hidden;
-        
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    z-index: 99;
 }
-.popup-content{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: white;
-        padding: 1rem 1.5rem;
-        width: 24rem;
-        border-radius: 0.5rem;
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(253, 253, 253);
+    padding: 1rem 2.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
 }
 
 .close-button {
     font-size: 30px;
     float: right;
     width: 3rem;
+    margin-top: .5rem;
     line-height: 3rem;
     text-align: center;
     cursor: pointer;
     border-radius: 0.25rem;
-    background-color: lightgray;
+    background-color: rgb(231, 231, 231);
 }
+
 .close-button:hover {
     background-color: darkgray;
 }

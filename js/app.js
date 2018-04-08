@@ -139,7 +139,7 @@ function compareCards(openCards) {
         else {
             setTimeout(
                 () => removeAndHide(card1, card2),
-                1500
+                1200
             );
         }
 
@@ -169,9 +169,9 @@ function addToOpenCardsArray(openCards, card){
 }
 function applyMovesToHTML(moves){
     if (moves === 1) {
-        counter.innerHTML = moves + ' Move';
+        counter.innerHTML = moves + ' move';
     } else if (moves >= 2) {
-        counter.innerHTML = moves + ' Moves';
+        counter.innerHTML = moves + ' moves';
     }
 }
 function addMove(moves) {

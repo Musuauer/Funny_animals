@@ -18,24 +18,29 @@
         </header>
 
         <section class="score-panel">
+            <div class="score-panel-element">
+                <span class="timer">
+                    <span id="minutes">00</span>:
+                    <span id="seconds">00</span>
+                </span>
+            </div>
+            <div class="score-panel-element">
+                <ul class="stars">
+                    <li>
+                        <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-star"></i>
+                    </li>
+                </ul>
+            </div>
 
-            <span class="timer">    
-                    <span id="minutes">00</span>:<span id="seconds">00</span>
-        </span>
-
-            <ul class="stars">
-                <li>
-                    <i class="fa fa-star"></i>
-                </li>
-                <li>
-                    <i class="fa fa-star"></i>
-                </li>
-                <li>
-                    <i class="fa fa-star"></i>
-                </li>
-            </ul>
-
-            <span class="moves"></span>
+            <div class="score-panel-element">
+                <span class="moves">0 moves</span>
+            </div>
 
             <div class="restart">
                 <i class="fa fa-repeat"></i>
@@ -100,12 +105,13 @@
 
                 <h1>You did it!</h1>
                 <h2>Moves:
-                    <span id="moves-result"></span></h2>
-                    <h2>Time:
-                        <span id="minutes-result"></span>
-                        <span id="seconds-result"></span> seconds.</h2>
+                    <span id="moves-result"></span>
+                </h2>
+                <h2>Time:
+                    <span id="minutes-result"></span>
+                    <span id="seconds-result"></span> seconds</h2>
                 <h2>You won
-                    <span id="stars-result"></span>.</h2>
+                    <span id="stars-result"></span></h2>
             </div>
         </div>
     </div>
