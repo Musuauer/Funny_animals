@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Gaegu');
 html {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
+    -webkit-box-sizing: inherit;
     box-sizing: inherit;
 }
 
@@ -24,9 +26,18 @@ body {
 }
 
 .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -42,7 +53,11 @@ h2 {
 
 header {
     height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
@@ -60,9 +75,16 @@ header {
     min-height: 680px;
     padding: 32px;
     border-radius: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin: -2rem 0 0 0;
 }
@@ -75,22 +97,31 @@ header {
     color: #ffffff;
     border-radius: 8px;
     cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
     border: 1px solid rgb(129, 129, 129);
 }
 
 .deck .card.open {
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     position: relative;
+    -webkit-transition: .7s ease-out;
+    -o-transition: .7s ease-out;
     transition: .7s ease-out;
     /* backface-visibility: hidden; */
     background: url("../img/pattern.svg");
     cursor: default;
     pointer-events: none;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -108,14 +139,19 @@ header {
     border-radius: 8px;
     position: relative;
     z-index: -1;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
     border: 1px solid rgb(129, 129, 129);
 }
 
 .paired {
+    -webkit-transform: none;
+    -ms-transform: none;
     transform: none;
     opacity: .7;
+    -webkit-backface-visibility: visible;
     backface-visibility: visible;
 }
 
@@ -127,7 +163,11 @@ header {
     /* text-align: left; */
     width: 560px;
     margin: 1rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
@@ -178,6 +218,8 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background: rgb(253, 253, 253);
     padding: 1rem 2.5rem;
@@ -204,6 +246,12 @@ header {
 .show-popup {
     opacity: 1;
     visibility: visible;
+    -webkit-transform: scale(1.0);
+    -ms-transform: scale(1.0);
     transform: scale(1.0);
+    -webkit-transition: visibility 0s linear 0s, opacity 0.25s 0s, -webkit-transform 0.25s;
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, -webkit-transform 0.25s;
+    -o-transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s, -webkit-transform 0.25s;
 }
