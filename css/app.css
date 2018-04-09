@@ -92,7 +92,7 @@ header {
 .deck .card {
     height: 125px;
     width: 125px;
-    background: url("../img/pattern.svg"), rgb(240, 248, 130);
+    background: url("../img/pattern.svg"), rgb(147, 144, 219);
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
@@ -160,7 +160,6 @@ header {
  */
 
 .score-panel {
-    /* text-align: left; */
     width: 560px;
     margin: 1rem 0;
     display: -webkit-box;
@@ -286,9 +285,13 @@ header {
         height: 55px;
         margin-left: 1rem;
     }
+    .popup-content{
+        padding: .5rem;
+        width: 90%;
+    }
 }
 
-/* ---MEDIA QUERIES-----breakpoint 497px-------- */
+/* ---MEDIA QUERIES-----breakpoint 442px-------- */
 
 @media only screen and (min-width: 374px) and (max-width: 442px) {
     .container {
@@ -315,11 +318,15 @@ header {
         height: 65px;
         margin-left: 1.2rem;
     }
+    .popup-content{
+        padding: .5rem;
+        width: 90%;
+    }
 }
 
 
 
-/* ---MEDIA QUERIES-----breakpoint 1000px-------- */
+/* ---MEDIA QUERIES-----breakpoint 537px-------- */
 
 @media only screen and (min-width: 443px) and (max-width: 537px)  {
     .container {
@@ -347,7 +354,7 @@ header {
       }
   }
 
-  /* ---MEDIA QUERIES-----breakpoint 1000px-------- */
+  /* ---MEDIA QUERIES-----breakpoint 610px-------- */
 
 @media only screen and (min-width: 538px) and (max-width: 610px)  {
     .container {
