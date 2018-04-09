@@ -123,6 +123,7 @@ header {
     pointer-events: none;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    -moz-user-select: none;
 }
 
 .deck .card.match {

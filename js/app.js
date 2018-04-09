@@ -60,6 +60,9 @@ function shuffle(array) {
     return array;
 
 }
+
+// Function to feed modal with results
+
 function toggleModal(moves, starArray) {
     movesPopup.innerHTML = moves;
 
@@ -69,8 +72,7 @@ function toggleModal(moves, starArray) {
     else if (minutes.innerHTML != 00 && minutes.innerHTML > 1){
             minutesPopup.innerHTML = minutes.innerHTML + ' minutes and ';
         }
-    
-    
+
     secondsPopup.innerHTML = seconds.innerHTML;
 
     if (starArray.length === 1) {
@@ -80,6 +82,8 @@ function toggleModal(moves, starArray) {
     }
     congrats.classList.toggle('show-popup');
 }
+
+// If all the cards are matched, call the modal
 function won(matchedCards) {
     if (matchedCards.length === 16) {
         clearInterval(timer);
@@ -87,20 +91,24 @@ function won(matchedCards) {
 }
 }
 
+// add classes to matched cards
 function addMatchClass(card1, card2){
     card1.children[0].classList.add('paired');
     card2.children[0].classList.add('paired');
     card1.classList.add('match');
     card2.classList.add('match');
-    
 
 }
+
+// remove and hide cards
 
 function removeAndHide(card1, card2){
     card1.classList.remove('open');
     card2.classList.remove('open');
     openCards = [];
 }
+
+// add pairs to matched array and call function to add classes
 
 function addToMatched(matchedCards, card1,card2) {
     matchedCards.push(card1);
@@ -123,6 +131,8 @@ function pad (val) {
     seconds.innerHTML = pad(++sec % 60);
     minutes.innerHTML = pad(parseInt(sec / 60, 10));
 }
+
+// Function to compare opened cards
 
 function compareCards(openCards) {
 
@@ -153,20 +163,30 @@ function compareCards(openCards) {
 
 }
 
+// to remove a star from the score panel
+
 function removeStar(starArray) {
 	starArray.pop().remove();
 }
+
+// condition to rome stars based on moves numbers
 
 function updateStars(starArray, moves){
     if (moves === 10 || moves === 20 || moves === 30) {
         removeStar(starArray);
     }
 }
+
+// add opened cards to a cards array
+
 function addToOpenCardsArray(openCards, card){
     if (card.classList.contains('open') && openCards.length < 2) {
         openCards.push(card);
     }
 }
+
+// update the score panel with the moves, where 2 clicks is one move
+
 function applyMovesToHTML(moves){
     if (moves === 1) {
         counter.innerHTML = moves + ' move';
@@ -174,25 +194,28 @@ function applyMovesToHTML(moves){
         counter.innerHTML = moves + ' moves';
     }
 }
+
+// function to increase moves by 1
 function addMove(moves) {
     return moves + 1
 }
+
+// condition to increase moves counter and call to remove stars
 function increaseCounter(event){
     if (openCards.length === 1) {
         moves = addMove(moves);
         applyMovesToHTML(moves);
         updateStars(starArray, moves);
     }
-    
 
 }
+
+// function called when a click on a card happens: increase the moves counter, change class of opened cards and call compare cards function
+
 function flip(event) {
     const card = event.target;
 
-   
     increaseCounter(event); 
-
-    
 
     if (openCards.length >= 2) return;
 
@@ -202,10 +225,14 @@ function flip(event) {
     compareCards(openCards);
 }
 
+// loop to use each card from the cards array and then add event listener of a click to each one, calling the flip function when activated
+
 for (card of cards) {
     card.addEventListener('click', flip);
 
 }
+
+// to restart the game, refresh the entire page
 
 function restartGame() {
     location.reload();
