@@ -266,7 +266,7 @@ header {
      
     }
     h1{
-        margin: 2rem 0;
+        margin: 1rem 0;
         line-height: 1;
         height: 80px;
     }
@@ -295,13 +295,13 @@ header {
       width: 100%;
     }
     h1{
-        margin: 3rem 0;
+        margin: 1rem 0;
         line-height: 1;
         height: 80px;
     }
     .score-panel{
         width: 90%;
-        margin: 1rem 0;
+        margin: 0;
 
     }
     .deck{
@@ -326,13 +326,13 @@ header {
         width: 100%;
       }
       h1{
-          margin: 3rem 0;
+          margin: 1rem 0;
           line-height: 1;
           height: 80px;
       }
       .score-panel{
           width: 90%;
-          margin: 2rem 0;
+          margin: 0;
       }
       .deck{
           width: 95%;
@@ -354,13 +354,13 @@ header {
         width: 100%;
       }
       h1{
-          margin: 3rem 0;
+          margin: 1rem 0;
           line-height: 1;
           height: 80px;
       }
       .score-panel{
           width: 90%;
-          margin: 2rem 0;
+          margin: 0;
       }
       .deck{
           width: 95%;
