@@ -81,7 +81,7 @@ function toggleModal(moves, starArray) {
     congrats.classList.toggle('show-popup');
 }
 function won(matchedCards) {
-    if (matchedCards.length === 4) {
+    if (matchedCards.length === 16) {
         clearInterval(timer);
         toggleModal(moves,starArray);
 }
