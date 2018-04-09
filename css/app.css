@@ -257,9 +257,9 @@ header {
 }
 
 
-/* ---MEDIA QUERIES-----breakpoint 375px-------- */
+/* ---MEDIA QUERIES-----breakpoint 373px-------- */
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 373px) {
     .container {
       width: 100%;
 
@@ -277,7 +277,7 @@ header {
     }
     .deck{
         width: 95%;
-        min-height: 400px;
+        min-height: 380px;
         margin: 1rem 0 0 -1rem;
         padding: 0;
     }
@@ -290,7 +290,7 @@ header {
 
 /* ---MEDIA QUERIES-----breakpoint 497px-------- */
 
-@media only screen and (min-width: 376px) and (max-width: 497px) {
+@media only screen and (min-width: 374px) and (max-width: 442px) {
     .container {
       width: 100%;
     }
@@ -313,7 +313,7 @@ header {
     .deck .card{
         width: 65px;
         height: 65px;
-        margin-left: 2rem;
+        margin-left: 1.2rem;
     }
 }
 
@@ -321,7 +321,7 @@ header {
 
 /* ---MEDIA QUERIES-----breakpoint 1000px-------- */
 
-@media only screen and (min-width: 498px) and (max-width: 665px)  {
+@media only screen and (min-width: 443px) and (max-width: 537px)  {
     .container {
         width: 100%;
       }
@@ -336,13 +336,41 @@ header {
       }
       .deck{
           width: 95%;
-          min-height: 600px;
+          min-height: 450px;
+          margin: 0 0 0 -2rem;
+          padding: 0;
+      }
+      .deck .card{
+          width: 80px;
+          height: 80px;
+          margin-left: 1.4rem;
+      }
+  }
+
+  /* ---MEDIA QUERIES-----breakpoint 1000px-------- */
+
+@media only screen and (min-width: 538px) and (max-width: 610px)  {
+    .container {
+        width: 100%;
+      }
+      h1{
+          margin: 3rem 0;
+          line-height: 1;
+          height: 80px;
+      }
+      .score-panel{
+          width: 90%;
+          margin: 2rem 0;
+      }
+      .deck{
+          width: 95%;
+          min-height: 550px;
           margin: 0 0 0 -2rem;
           padding: 0;
       }
       .deck .card{
           width: 100px;
           height: 100px;
-          margin-left: 2rem;
+          margin-left: 1rem;
       }
   }
