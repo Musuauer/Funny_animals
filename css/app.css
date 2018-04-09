@@ -92,7 +92,7 @@ header {
 .deck .card {
     height: 125px;
     width: 125px;
-    background: url("../img/pattern.svg"), rgb(147, 144, 219);
+    background: url("../img/pattern.svg"), rgb(151, 166, 230);
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
