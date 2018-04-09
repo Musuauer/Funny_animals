@@ -1,7 +1,4 @@
-//--------------------general variables
-const cards = deck.children;
-let openCards = [];
-let matchedCards = [];
+
 
 // get all cards  in a list
 const allCards = document.querySelectorAll('.card');
@@ -12,6 +9,23 @@ let newCards = shuffle(oldCards);
 let deck = document.querySelector('.deck');
 deck.innerHTML = newCards.join('');
 
+//--------------------general variables
+const cards = deck.children;
+let openCards = [];
+let matchedCards = [];
+
+
+
+//---------------------------modal
+const congrats = document.querySelector('.popup');
+//---restart-from-modal
+const closeButton = document.querySelector('.close-button');
+closeButton.addEventListener('click', restartGame);
+//---stars, moves, timer
+const starsPopup = document.getElementById('stars-result');
+const movesPopup = document.getElementById('moves-result');
+const minutesPopup = document.getElementById('minutes-result');
+const secondsPopup = document.getElementById('seconds-result');
 
 //------------------------score-panel
 //---stars
@@ -28,18 +42,6 @@ let sec = 0;
 let timer = 0;
 let seconds = document.getElementById('seconds');
 let minutes = document.getElementById('minutes');
-
-
-//---------------------------modal
-const congrats = document.querySelector('.popup');
-//---restart-from-modal
-const closeButton = document.querySelector('.close-button');
-closeButton.addEventListener('click', restartGame);
-//---stars, moves, timer
-const starsPopup = document.getElementById('stars-result');
-const movesPopup = document.getElementById('moves-result');
-const minutesPopup = document.getElementById('minutes-result');
-const secondsPopup = document.getElementById('seconds-result');
 
 
 
@@ -65,16 +67,18 @@ function shuffle(array) {
 // Function to feed modal with results
 
 function toggleModal(moves, starArray) {
-    movesPopup.innerHTML = moves;
-
-    if (minutes.innerHTML != 00 && minutes.innerHTML === 1){
+    if (minutes.innerHTML === '00') return;
+    else if (minutes.innerHTML === '01'){
+        console.log("first if, for one minute");
         minutesPopup.innerHTML = minutes.innerHTML + ' minute and ';
     }
-    else if (minutes.innerHTML != 00 && minutes.innerHTML > 1){
+    else{
+        console.log("second if, for more minutes");
             minutesPopup.innerHTML = minutes.innerHTML + ' minutes and ';
         }
 
-    secondsPopup.innerHTML = seconds.innerHTML;
+        secondsPopup.innerHTML = seconds.innerHTML;
+        movesPopup.innerHTML = moves;
 
     if (starArray.length === 1) {
         starsPopup.innerHTML = starArray.length + ' Star';
