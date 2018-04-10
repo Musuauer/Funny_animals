@@ -68,15 +68,8 @@ function shuffle(array) {
 
 function toggleModal(moves, starArray) {
     if (minutes.innerHTML === '00') return;
-    else if (minutes.innerHTML === '01'){
-        console.log("first if, for one minute");
-        minutesPopup.innerHTML = minutes.innerHTML + ' minute and ';
-    }
-    else{
-        console.log("second if, for more minutes");
-            minutesPopup.innerHTML = minutes.innerHTML + ' minutes and ';
-        }
-
+    
+        minutesPopup.innerHTML = minutes.innerHTML;
         secondsPopup.innerHTML = seconds.innerHTML;
         movesPopup.innerHTML = moves;
 

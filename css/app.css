@@ -224,7 +224,7 @@ header {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    background: rgb(253, 253, 253);
+    background: url('../img/geometry2.png');
     padding: 1rem 2.5rem;
     width: 26rem;
     border-radius: 0.5rem;
@@ -257,6 +257,14 @@ header {
     -o-transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s, -webkit-transform 0.25s;
+}
+.cat-gif{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -30%);
 }
 
 
