@@ -8,11 +8,11 @@ Having my three year old son in mind, I designed the game oriented to toddlers, 
 
 ## Instructions
 
--Click on a card to flip it and reveal its image.
--Click on another card to see if they match.
-  If they match, they will stay open.
-  If they don't match, they will be flipped again.
--Find the 8 pairs of funny animals, look at your time and how many stars you will earn.
--Try to do it faster next time, as the cards will have a new random order.
+1. Click on a card to flip it and reveal its image.
+2. Click on another card to see if they match.
+⋅⋅⋅If they match, they will stay open.
+⋅⋅⋅If they don't match, they will be flipped again.
+3. Find the 8 pairs of funny animals, look at your time and how many stars you will earn.
+4. Try to do it faster next time, as the cards will have a new random order.
 
-*Have fun!*
+**Have fun!**
