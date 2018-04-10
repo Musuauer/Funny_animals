@@ -18,7 +18,7 @@ Having my three year old son in mind, I designed the game oriented to toddlers, 
 3. Find the 8 pairs of funny animals, look at your time and how many stars you will earn.
 4. Try to do it faster next time, as the cards will have a new random order.
 
-**Have fun!**
+###**Have fun!**
 
 
 # Image Credits
