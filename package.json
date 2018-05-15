@@ -1,0 +1,22 @@
+{
+  "name": "memory_game",
+  "version": "1.0.0",
+  "description": "Project #2 for the Front-End Developer Nano Degree from Udacity, under a Google Scholarship.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Musuauer/Funny_animals.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Musuauer/Funny_animals/issues"
+  },
+  "homepage": "https://github.com/Musuauer/Funny_animals#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
